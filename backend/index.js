@@ -95,7 +95,7 @@ app.get("/", (req, res) => {
 });
 
 // Mongo endpoints
-app.get("/get-appointment/:email", getAppointment);
+app.get("/api/get-appointment/:email", getAppointment);
 app.post("/book-appointment", submitAppointment);
 app.patch("/mod-appointment", modAppointment);
 app.delete("/del-appointment/:email", deleteAppointment);
