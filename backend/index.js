@@ -8,6 +8,7 @@ const { getAppointment } = require("./handlers/getAppointment");
 const { modAppointment } = require("./handlers/modAppointment");
 const { deleteAppointment } = require("./handlers/deleteAppointment");
 const { loginUser } = require("./handlers/loginUser");
+const { signupUser } = require("./handlers/signupUser");
 
 const app = express();
 const corsOptions = {
@@ -27,6 +28,34 @@ const {
 
 // Endpoint to handle login
 app.post("/api/login", loginUser);
+
+// Endpoint to handle signup
+app.post("/api/signup", async (req, res) => {
+  const { email, password, connection } = req.body;
+  try {
+    const response = await axios.post(
+      `https://${REACT_APP_AUTH0_DOMAIN}/dbconnections/signup`,
+      {
+        client_id: REACT_APP_AUTH0_CLIENT_ID,
+        connection: "Username-Password-Authentication",
+        email: email,
+        password: password,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    res.status(201).json({ message: "User created successfully" });
+  } catch (error) {
+    console.error("Signup error:", error);
+    res
+      .status(error.response?.status || 500)
+      .json({ message: error.response?.data?.message || "Signup failed" });
+  }
+});
 
 app.get("/api/public", function (req, res) {
   res.json({
