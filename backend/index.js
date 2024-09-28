@@ -13,7 +13,7 @@ const { signupUser } = require("./handlers/signupUser");
 const app = express();
 const corsOptions = {
   origin: ["http://localhost:3000", "https://project-capstone-ten.vercel.app"],
-  methods: "GET,POST",
+  methods: "GET,POST,DELETE,PATCH",
   allowedHeaders: "Content-Type,Authorization",
 };
 
