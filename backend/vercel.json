@@ -11,6 +11,10 @@
     {
       "src": "/(.*)",
       "dest": "index.js"
+    },
+    {
+      "src": "/api/get-appointment",
+      "dest": "/api/get-appointment.js"
     }
   ]
 }
