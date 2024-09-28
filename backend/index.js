@@ -47,7 +47,7 @@ app.get("/", (req, res) => {
 app.get("/api/get-appointment/:email", getAppointment);
 app.post("/book-appointment", submitAppointment);
 app.patch("/mod-appointment", modAppointment);
-app.delete("/del-appointment/:email", deleteAppointment);
+app.delete("/delete-appointment/:email", deleteAppointment);
 
 app.options("*", cors(corsOptions));
 

@@ -23,6 +23,18 @@
     {
       "src": "/api/signup",
       "dest": "/api/signup.js"
+    },
+    {
+      "src": "/api/delete-appointment",
+      "dest": "/api/delete-appointment.js"
+    },
+    {
+      "src": "/api/mod-appointment",
+      "dest": "/api/mod-appointment.js"
+    },
+    {
+      "src": "/api/submit-appointment",
+      "dest": "/api/submit-appointment.js"
     }
   ]
 }
