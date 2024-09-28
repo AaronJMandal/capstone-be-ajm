@@ -15,6 +15,10 @@
     {
       "src": "/api/get-appointment",
       "dest": "/api/get-appointment.js"
+    },
+    {
+      "src": "/api/login",
+      "dest": "/api/login.js"
     }
   ]
 }
