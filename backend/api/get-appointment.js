@@ -1,7 +1,7 @@
 const { getAppointment } = require("../handlers/getAppointment");
 
 module.exports = async (req, res) => {
-  const { email } = req.query;
+  const { email } = req.params;
 
   req.params = { email };
 
